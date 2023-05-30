@@ -1,0 +1,109 @@
+SAFE
+
+Inferred ACSL annotations
+================================================================================
+----- Applying PointerPropProcessor to precondition of findMax
+----- Precondition: 
+(EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3)))
+Result: 
+Some((\separated(x, y) & (\valid(x) & \valid(y))))
+----- Applying PointerPropProcessor to postcondition of findMax
+----- Postcondition: 
+((((_6 = _2) & (_7 = _3)) & ((((_13 = _14) & ((((-2 + counterAddr(_8)) >= 0) & ((-1 + _2) >= 0)) & ((-2 + _3) >= 0))) & (((-1 + (-1 * _12 + _14)) >= 0) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12))) | (((((-2 + counterAddr(_8)) >= 0) & ((-1 + _2) >= 0)) & ((-2 + _3) >= 0)) & (((_12 = _14) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12)) & (((_12 + -1 * _13) >= 0) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12)))))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- Result: 
+None
+----- Applying AssignmentProcessor to precondition of findMax
+----- Precondition: 
+(EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3)))
+----- Result: 
+None
+----- Applying AssignmentProcessor to postcondition of findMax
+----- Postcondition: 
+((((_6 = _2) & (_7 = _3)) & ((((_13 = _14) & ((((-2 + counterAddr(_8)) >= 0) & ((-1 + _2) >= 0)) & ((-2 + _3) >= 0))) & (((-1 + (-1 * _12 + _14)) >= 0) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12))) | (((((-2 + counterAddr(_8)) >= 0) & ((-1 + _2) >= 0)) & ((-2 + _3) >= 0)) & (((_12 = _14) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12)) & (((_12 + -1 * _13) >= 0) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12)))))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- Result: 
+None
+----- Applying tricera.postprocessor.PostconditionSimplifier$@2407a36c to findMax.
+----- Precondition: 
+(EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3)))
+----- New Precondition: 
+(EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3)))
+----- Postcondition: 
+((((_6 = _2) & (_7 = _3)) & ((((_13 = _14) & ((((-2 + counterAddr(_8)) >= 0) & ((-1 + _2) >= 0)) & ((-2 + _3) >= 0))) & (((-1 + (-1 * _12 + _14)) >= 0) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12))) | (((((-2 + counterAddr(_8)) >= 0) & ((-1 + _2) >= 0)) & ((-2 + _3) >= 0)) & (((_12 = _14) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12)) & (((_12 + -1 * _13) >= 0) | !(getInt(read(_8, (-1 + counterAddr(_8)))) = _12)))))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying tricera.postprocessor.TheoryOfHeapProcessor$@5dcf0772 to findMax.
+----- Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- New Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying tricera.postprocessor.ADTSimplifier$@1cee2e10 to findMax.
+----- Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- New Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying tricera.postprocessor.ADTExploder$@5d66ae3a to findMax.
+----- Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- New Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying tricera.postprocessor.ToVariableForm$@50f4b83d to findMax.
+----- Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- New Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying tricera.postprocessor.ACSLExpressionProcessor$@37c1cfa to findMax.
+----- Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- New Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying tricera.postprocessor.ClauseRemover$@537b3b2e to findMax.
+----- Precondition: 
+((EX Heap. EX EX (((HeapObject_ctor(read(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10)) = 0) & (write(write(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9, O_Int(_7)), _10, O_Int(_8)) = _3)) & ((HeapObject_ctor(read(newHeap(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))), _9)) = 0) & ((newAddr(alloc(newHeap(alloc(_2[Heap], O_Int(_1))), O_Int(_0))) = _10) & (newAddr(alloc(_2[Heap], O_Int(_1))) = _9)))) & ((_6 = _2) & (_7 = _3))) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- New Precondition: 
+(((_6 = _2) & (_7 = _3)) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & ((((((_8 = _0) & (_9 = _1)) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- New Postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & (((((_9 = _1) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+
+----- Applying ACSLLineariser to precondition: 
+(((_6 = _2) & (_7 = _3)) & (\separated(x, y) & (\valid(x) & \valid(y))))
+----- Result: 
+ _6 == _2 && _7 == _3 && \separated(x, y) && \valid(x) && \valid(y)
+----- Applying ACSLLineariser to postcondition: 
+((((_13 = _14) & ((-1 + (-1 * _12 + _14)) >= 0)) | ((_12 = _14) & ((_12 + -1 * _13) >= 0))) & (((((_9 = _1) & (_12 = _4)) & (_13 = _5)) & (_2 = _10)) & (_3 = _11)))
+----- Result: 
+ ((_13 == _14 && _14 - _12 >= 1) || (_12 == _14 && _12 >= _13)) && _9 == _1 && _12 == _4 && _13 == _5 && _2 == _10 && _3 == _11
+/* contracts for findMax */
+/*@
+  requires x == a && y == b && \separated(x, y) && \valid(x) && \valid(y);
+  ensures ((b_init == \result && \result - a_init >= 1) || (a_init == \result && a_init >= b_init)) && r == \old(r) && a_init == \old(a_init) && b_init == \old(b_init) && \old(a) == a && \old(b) == b;
+*/
+================================================================================
+

@@ -1,0 +1,109 @@
+SAFE
+
+Inferred ACSL annotations
+================================================================================
+----- Applying PointerPropProcessor to precondition of get
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+Result: 
+None
+----- Applying PointerPropProcessor to postcondition of get
+----- Postcondition: 
+(((_4 = _3) & ((((_9 = 0) & ((((-1 + _7) >= 0) & ((-1 + _3) >= 0)) & ((-1 + counterAddr(_0)) >= 0))) & (((((!(getInt(read(_0, _3)) = _7) & (-1 * getInt(read(_0, _3)) >= 0)) & (!(O_Int(_7) = read(_0, _3)) | !(getInt(read(_0, _3)) = _7))) & (!(_3 = counterAddr(_0)) | (!(O_Int(_7) = read(_0, counterAddr(_0))) | !(getInt(read(_0, counterAddr(_0))) = _7)))) & (((((-2 + _7) >= 0) & (getInt(read(_0, _3)) = 1)) | !(getInt(read(_0, _3)) = _7)) | !(counterAddr(_0) = _3))) & (!(counterAddr(_0) = _3) | (((((-2 + _7) = 0) & !(O_Int(2) = read(_0, _3))) | !(O_Int(_7) = read(_0, _3))) | !(getInt(read(_0, _3)) = _7))))) | ((((((-1 + _7) >= 0) & ((-1 + _3) >= 0)) & ((-1 + counterAddr(_0)) >= 0)) & (_9 >= 0)) & (((((!(_3 = counterAddr(_0)) | (_7 = _9)) | (!(O_Int(_7) = read(_0, counterAddr(_0))) | !(getInt(read(_0, counterAddr(_0))) = _7))) & ((_7 = _9) | (((((-2 + _7) >= 0) & (getInt(read(_0, _3)) = 1)) | !(getInt(read(_0, _3)) = _7)) | !(counterAddr(_0) = _3)))) & ((_7 = _9) | (!(counterAddr(_0) = _3) | (((((-2 + _7) = 0) & !(O_Int(2) = read(_0, _3))) | !(O_Int(_7) = read(_0, _3))) | !(getInt(read(_0, _3)) = _7))))) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- Result: 
+None
+----- Applying AssignmentProcessor to precondition of get
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- Result: 
+None
+----- Applying AssignmentProcessor to postcondition of get
+----- Postcondition: 
+(((_4 = _3) & ((((_9 = 0) & ((((-1 + _7) >= 0) & ((-1 + _3) >= 0)) & ((-1 + counterAddr(_0)) >= 0))) & (((((!(getInt(read(_0, _3)) = _7) & (-1 * getInt(read(_0, _3)) >= 0)) & (!(O_Int(_7) = read(_0, _3)) | !(getInt(read(_0, _3)) = _7))) & (!(_3 = counterAddr(_0)) | (!(O_Int(_7) = read(_0, counterAddr(_0))) | !(getInt(read(_0, counterAddr(_0))) = _7)))) & (((((-2 + _7) >= 0) & (getInt(read(_0, _3)) = 1)) | !(getInt(read(_0, _3)) = _7)) | !(counterAddr(_0) = _3))) & (!(counterAddr(_0) = _3) | (((((-2 + _7) = 0) & !(O_Int(2) = read(_0, _3))) | !(O_Int(_7) = read(_0, _3))) | !(getInt(read(_0, _3)) = _7))))) | ((((((-1 + _7) >= 0) & ((-1 + _3) >= 0)) & ((-1 + counterAddr(_0)) >= 0)) & (_9 >= 0)) & (((((!(_3 = counterAddr(_0)) | (_7 = _9)) | (!(O_Int(_7) = read(_0, counterAddr(_0))) | !(getInt(read(_0, counterAddr(_0))) = _7))) & ((_7 = _9) | (((((-2 + _7) >= 0) & (getInt(read(_0, _3)) = 1)) | !(getInt(read(_0, _3)) = _7)) | !(counterAddr(_0) = _3)))) & ((_7 = _9) | (!(counterAddr(_0) = _3) | (((((-2 + _7) = 0) & !(O_Int(2) = read(_0, _3))) | !(O_Int(_7) = read(_0, _3))) | !(getInt(read(_0, _3)) = _7))))) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- Result: 
+None
+----- Applying tricera.postprocessor.PostconditionSimplifier$@5885e231 to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- New Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- Postcondition: 
+(((_4 = _3) & ((((_9 = 0) & ((((-1 + _7) >= 0) & ((-1 + _3) >= 0)) & ((-1 + counterAddr(_0)) >= 0))) & (((((!(getInt(read(_0, _3)) = _7) & (-1 * getInt(read(_0, _3)) >= 0)) & (!(getInt(read(_0, _3)) = _7) | !(getInt(read(_0, _3)) = _7))) & (!(_3 = counterAddr(_0)) | (!(getInt(read(_0, counterAddr(_0))) = _7) | !(getInt(read(_0, counterAddr(_0))) = _7)))) & (((((-2 + _7) >= 0) & (getInt(read(_0, _3)) = 1)) | !(getInt(read(_0, _3)) = _7)) | !(counterAddr(_0) = _3))) & (!(counterAddr(_0) = _3) | (((((-2 + _7) = 0) & !(getInt(read(_0, _3)) = 2)) | !(getInt(read(_0, _3)) = _7)) | !(getInt(read(_0, _3)) = _7))))) | ((((((-1 + _7) >= 0) & ((-1 + _3) >= 0)) & ((-1 + counterAddr(_0)) >= 0)) & (_9 >= 0)) & (((((!(_3 = counterAddr(_0)) | (_7 = _9)) | (!(getInt(read(_0, counterAddr(_0))) = _7) | !(getInt(read(_0, counterAddr(_0))) = _7))) & ((_7 = _9) | (((((-2 + _7) >= 0) & (getInt(read(_0, _3)) = 1)) | !(getInt(read(_0, _3)) = _7)) | !(counterAddr(_0) = _3)))) & ((_7 = _9) | (!(counterAddr(_0) = _3) | (((((-2 + _7) = 0) & !(getInt(read(_0, _3)) = 2)) | !(getInt(read(_0, _3)) = _7)) | !(getInt(read(_0, _3)) = _7))))) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying tricera.postprocessor.TheoryOfHeapProcessor$@1805ec96 to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- New Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying tricera.postprocessor.ADTSimplifier$@356341c9 to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- New Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying tricera.postprocessor.ADTExploder$@286a4c52 to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- New Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying tricera.postprocessor.ToVariableForm$@13dd7887 to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _3) >= 0)) & (HeapObject_ctor(read(_0, _3)) = 0)))
+----- New Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _4) >= 0)) & (HeapObject_ctor(read(_0, _4)) = 0)))
+----- Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _3)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _4)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying tricera.postprocessor.ACSLExpressionProcessor$@24615687 to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _4) >= 0)) & (HeapObject_ctor(read(_0, _4)) = 0)))
+----- New Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _4) >= 0)) & (HeapObject_ctor(read(_0, _4)) = 0)))
+----- Postcondition: 
+((((_9 = 0) & (-1 * getInt(read(_0, _4)) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (getInt(read(_0, _3)) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * oldDeref(p) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (oldDeref(n) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying tricera.postprocessor.ClauseRemover$@120411ec to get.
+----- Precondition: 
+((_4 = _3) & (((((-1 + counterAddr(_0)) >= 0) & ((-1 + _2) >= 0)) & ((-1 + _4) >= 0)) & (HeapObject_ctor(read(_0, _4)) = 0)))
+----- New Precondition: 
+((_4 = _3) & ((-1 + _2) >= 0))
+----- Postcondition: 
+((((_9 = 0) & (-1 * oldDeref(p) >= 0)) | ((_9 >= 0) & (!(counterAddr(_0) = _3) | (oldDeref(n) = _9)))) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- New Postcondition: 
+((((_9 = 0) & (-1 * oldDeref(p) >= 0)) | (_9 >= 0)) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+
+----- Applying ACSLLineariser to precondition: 
+((_4 = _3) & ((-1 + _2) >= 0))
+----- Result: 
+ _4 == _3 && _2 >= 1
+----- Applying ACSLLineariser to postcondition: 
+((((_9 = 0) & (-1 * oldDeref(p) >= 0)) | (_9 >= 0)) & (((_6 = _1) & (_7 = _2)) & (_3 = _8)))
+----- Result: 
+ ((_9 == 0 && 0 >= \old(*p)) || _9 >= 0) && _6 == _1 && _7 == _2 && _3 == _8
+/* contracts for get */
+/*@
+  requires p == n && n_init >= 1;
+  ensures ((\result == 0 && 0 >= \old(*p)) || \result >= 0) && r1 == \old(r1) && n_init == \old(n_init) && \old(n) == n;
+*/
+================================================================================
+
